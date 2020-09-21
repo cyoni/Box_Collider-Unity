@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnCollision : MonoBehaviour
 {
@@ -13,19 +11,9 @@ public class OnCollision : MonoBehaviour
    //     Debug.Log("we hit this");
         if (collision.collider.tag == "Obstacle")
         {
-           Debug.Log("we hit this");
             movement.enabled = false;
+            FindObjectOfType<GameManager>().EndGame();
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
